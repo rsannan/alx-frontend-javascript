@@ -1,14 +1,13 @@
 export default function handleResponseFromAPI(promise) {
-  return new Promise((resolve, reject) => {
-    if (success) {
-      resolve({
-        status: 200,
-        body: 'Success',
-      });
-    } else {
-      reject(
-        Error('The fake API is not working currently'),
-      );
-    }
+  const Mypromise = new Promise((resolve, reject) => {
+    resolve({
+      status: 200,
+      body: 'Success',
+    });
+    reject(
+      Error(),
+    );
+    promise.then(() => console.log('Got a response from the API'));
   });
+  return Mypromise;
 }
