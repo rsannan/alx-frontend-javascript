@@ -12,11 +12,10 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       let val = '';
       if (stat === 'fulfilled') {
         val = result.value;
-      } else { val = result.reason.message; }
+      } else { val = `Error: ${result.reason.message}`; }
       const obj = { status: stat, value: val };
-      console.log(obj);
       arr.push(obj);
     });
-    console.log(arr);
+    return arr;
   });
 }
