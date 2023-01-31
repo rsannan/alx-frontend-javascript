@@ -5,7 +5,7 @@ export default function cleanSet(set, startString) {
   }
   let str = '';
   for (const ele of set) {
-    if (ele.startsWith(startString)) {
+    if (ele && ele.startsWith(startString)) {
       if (str === '') {
         str = str.concat(ele.slice(strlen + 1));
       } else {
